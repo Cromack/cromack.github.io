@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <iframe id="myframe" src="game.html" width="100%" height="1000" name="peli-ikkuna">
+  </iframe>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+  var field;
+  var score;
+  var scores=[];
+  window.addEventListener("message", function(evt){
+    if(evt.data.messageType === "SAVE") {
+      field = evt.data.gamestate.field;
+      score = evt.data.gamestate.score;
+    }
+    else if(evt.data.messageType === "LOAD_REQUEST") {
+      var message = {
+        "messageType": "LOAD",
+        "gamestate": {
+          "field": field,
+          "score": score
+        }
+      };
+      document.getElementById('myframe').contentWindow.postMessage(message, "*");
+    }
+    else if(evt.data.messageType == "SCORE"){
+      scores.push(evt.data.score);
+      scores.sort(function(a, b){return b-a});
+    }
+    else if(evt.data.messageType == "HIGHSCORES"){
+      var message={
+        "messageType": "SCORES",
+        "scores":scores
+      }
+      window.alert(message.scores);
+        document.getElementById('myframe').contentWindow.postMessage(message, "*");
+    }
+  });
+  </script>
+</head>
