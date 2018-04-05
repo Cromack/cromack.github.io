@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- The game is a simple version of minesweeper. You have to find the squares that don't have mines.
+If you hit a mine, it's game over. Uncovering all the squares without mines makes you win the game.
+
+How to Play: At the start of the game press the New Game button. This will add a random a number of mines into the area
+Click the squares in the area to uncover them. If the square has a mine, it turns red and the game will end. If it doesn't have a mine,
+it turns green and calculates how many mines are in nearby squares. The amount of nearby mines is shown in the square. Ex. if the square shows 0,
+there are no mines next to it, if it's 8 it is in the middle of the mines. Nearby mines are calculated vertically, horizontally and diagonally.
+
+You can press the save game button to save your progress and scores. Pressing the load game will
+ load a previously saved game. New game generates a new minefield.-->
+  <head>
+    <title>Minesweeper</title>
+    <meta charset="utf-8">
+    <script src="miinaharava.js"></script>
+    <link rel="stylesheet" href="miinaharava.css">
+  </head>
+  <body>
+      <h1 id="text">Start the Game</h1>
+      <p id="score">0</p>
+        <!--Basic buttons-->
+        <div class = "basic">
+          <button type="button" id="start" onclick ="init();">New Game</button>
+          <button type="button" id="load" onclick ="load();">Load Game</button>
+          <button type="button" id="save" onclick ="save();">Save Game</button>
+        </div>
+        <!--Gamefield buttons. Each button has unique id that is used to check what
+        button is pressed and where the mines will go -->
+        <div class ="rivi">
+          <button type="button" id="10" disabled onclick ="button(id);"></button>
+          <button type="button" id="11" disabled onclick ="button(id);"></button>
+          <button type="button" id="12" disabled onclick ="button(id);"></button>
+          <button type="button" id="13" disabled onclick ="button(id);"></button>
+          <button type="button" id="14" disabled onclick ="button(id);"></button>
+          <button type="button" id="15" disabled onclick ="button(id);"></button>
+        </div>
+        <div class ="rivi">
+          <button type="button" id="20" disabled onclick ="button(id);"></button>
+          <button type="button" id="21" disabled onclick ="button(id);"></button>
+          <button type="button" id="22" disabled onclick ="button(id);"></button>
+          <button type="button" id="23" disabled onclick ="button(id);"></button>
+          <button type="button" id="24" disabled onclick ="button(id);"></button>
+          <button type="button" id="25" disabled onclick ="button(id);"></button>
+        </div>
+        <div class ="rivi">
+          <button type="button" id="30" disabled onclick ="button(id);"></button>
+          <button type="button" id="31" disabled onclick ="button(id);"></button>
+          <button type="button" id="32" disabled onclick ="button(id);"></button>
+          <button type="button" id="33" disabled onclick ="button(id);"></button>
+          <button type="button" id="34" disabled onclick ="button(id);"></button>
+          <button type="button" id="35" disabled onclick ="button(id);"></button>
+        </div>
+        <div class ="rivi">
+          <button type="button" id="40" disabled onclick ="button(id);"></button>
+          <button type="button" id="41" disabled onclick ="button(id);"></button>
+          <button type="button" id="42" disabled onclick ="button(id);"></button>
+          <button type="button" id="43" disabled onclick ="button(id);"></button>
+          <button type="button" id="44" disabled onclick ="button(id);"></button>
+          <button type="button" id="45" disabled onclick ="button(id);"></button>
+        </div>
+        <div class ="rivi">
+          <button type="button" id="50" disabled onclick ="button(id);"></button>
+          <button type="button" id="51" disabled onclick ="button(id);"></button>
+          <button type="button" id="52" disabled onclick ="button(id);"></button>
+          <button type="button" id="53" disabled onclick ="button(id);"></button>
+          <button type="button" id="54" disabled onclick ="button(id);"></button>
+          <button type="button" id="55" disabled onclick ="button(id);"></button>
+        </div>
+        <div class ="rivi">
+          <button type="button" id="60" disabled onclick ="button(id);"></button>
+          <button type="button" id="61" disabled onclick ="button(id);"></button>
+          <button type="button" id="62" disabled onclick ="button(id);"></button>
+          <button type="button" id="63" disabled onclick ="button(id);"></button>
+          <button type="button" id="64" disabled onclick ="button(id);"></button>
+          <button type="button" id="65" disabled onclick ="button(id);"></button>
+        </div>
+  </body>
+</html>

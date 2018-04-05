@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+}
+.rivi button{
+  width: 15%;
+  height: auto;
+  padding: 2%;
+  font-size: smaller;
+}
+
+.basic button{
+  width: 22%;
+  padding: 1%;
+  font-size: 150%;
+}
+
+.basic{
+  margin-bottom: 2%;
+}
